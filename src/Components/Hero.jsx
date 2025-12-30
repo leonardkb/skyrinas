@@ -39,20 +39,14 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       {/* Background Image */}
-      <motion.img
-        src="/image.png"
-        alt="Skyrina apparel manufacturing facility"
-        className="absolute inset-0 w-full h-full object-cover"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{
-          duration: 14,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        aria-hidden
-      />
+      <video
+          src="https://s06keky88ey7lgeh.public.blob.vercel-storage.com/ESPAN%CC%83OL%20%284K%29.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
       {/* Gradient Overlay – ONLY hero section */}
       <motion.div
