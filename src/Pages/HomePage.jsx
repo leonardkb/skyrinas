@@ -8,6 +8,7 @@ import { DesignPrototyping } from "../Components/DesigningPrototyping";
 import { OurClients } from "../Components/OurClients";
 import { Footer } from "../Components/Footer";
 import SplashScreen from "../Components/SplashScreen";
+import ChatBox from "../Components/ChatBox";
 
 export default function HomePage() {
   const [showSplash, setShowSplash] = useState(true);
@@ -27,6 +28,7 @@ export default function HomePage() {
           <Technology />
           <DesignPrototyping />
           <OurClients />
+          <ChatBox />
           <Footer />
         </div>
       )}
