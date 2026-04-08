@@ -8,7 +8,7 @@ export default function BackgroundLines() {
       preserveAspectRatio="none"
     >
       <g
-        stroke="rgba(43, 46, 44, 0.12)"
+        stroke="rgba(196, 196, 196, 0.12)"
         strokeWidth="2.5"
         fill="none"
       >

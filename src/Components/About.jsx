@@ -3,53 +3,6 @@ import { motion } from "framer-motion";
 import BackgroundLines from "./BackgroudLines";
 
 export default function About() {
-  const pillars = [
-    {
-      title: "Shorter production lead times",
-      svg: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 16l-3-3 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Guaranteed raw material availability",
-      svg: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M5 19h14v-2H5v2zM7 7h3v8H7V7zm7 4h3v4h-3v-4z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Quality control at every step",
-      svg: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2l3 6 6 .5-4.5 4 1.5 6L12 16l-6 2 1.5-6L3 8.5 9 8 12 2z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-    },
-    {
-      title: "Cost efficiency through vertical integration",
-      svg: (
-        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 6h2v6h-2V8zm0 8h2v2h-2v-2z"
-            fill="currentColor"
-          />
-        </svg>
-      ),
-    },
-  ];
-
   /* Animations */
   const container = {
     hidden: {},
@@ -69,90 +22,213 @@ export default function About() {
     },
   };
 
-  const card = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
   return (
     <section className="relative overflow-hidden py-20 scroll-smooth">
       <BackgroundLines />
 
       <motion.div
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-6xl mx-auto px-6"
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Intro */}
-        <motion.p
-          variants={fadeUp}
-          className="text-gray-800 mb-4 text-xl"
-        >
-          <span className="font-bold text-blue-700">
-            Skyrina is a leading apparel manufacturing company
-          </span>{" "}
-          delivering high-quality garments for global markets.
-        </motion.p>
+        <motion.div variants={fadeUp} className="text-center mb-16">
+          <p className="text-gray-800 mb-4 text-xl">
+            <span className="font-bold text-blue-700">
+              Skyrina is a leading apparel manufacturing company
+            </span>{" "}
+            delivering high-quality garments for global markets.
+          </p>
 
-        <motion.p
-          variants={fadeUp}
-          className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-base md:text-lg"
-        >
-          We combine skilled craftsmanship with advanced production technologies
-          to ensure efficiency, consistency, and excellence. Our commitment to
-          sustainability and innovation helps partners bring premium products to
-          market reliably and responsibly.
-        </motion.p>
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-base md:text-lg">
+            We combine skilled craftsmanship with advanced production technologies
+            to ensure efficiency, consistency, and excellence. Our commitment to
+            sustainability and innovation helps partners bring premium products to
+            market reliably and responsibly.
+          </p>
+        </motion.div>
 
-        {/* Spacer */}
-        <div className="mt-12" />
+        {/* The Power of Vertical Integration - Simple Flowchart as per image */}
+        <motion.div variants={fadeUp} className="mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 text-center mb-12">
+            The Power of Vertical Integration
+          </h2>
 
-        {/* Heading */}
-        <motion.h2
-          variants={fadeUp}
-          className="text-2xl md:text-3xl font-bold text-blue-800 mb-10"
-        >
-          Our Benefits
-        </motion.h2>
-
-        {/* Benefits Grid */}
-        <motion.div
-          variants={container}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 
-          gap-12 items-start"
-        >
-          {pillars.map((p, i) => (
-            <motion.div
-              key={i}
-              variants={card}
-              whileHover={{ y: -6, scale: 1.05 }}
-              whileFocus={{ scale: 1.05 }}
-              className="flex flex-col items-center text-center px-4 cursor-pointer"
+          {/* Simple Vertical Flowchart SVG */}
+          <div className="flex justify-center mb-12">
+            <svg
+              width="400"
+              height="400"
+              viewBox="0 0 400 400"
+              className="mx-auto"
+              style={{ background: "transparent" }}
             >
-              <motion.div
-                className="w-20 h-20 rounded-full bg-green-700 text-white 
-                flex items-center justify-center mb-6 shadow-lg"
-                whileHover={{ rotate: 6 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-                {p.svg}
-              </motion.div>
+              {/* Box 1: SKYARN */}
+              <rect
+                x="100"
+                y="10"
+                width="200"
+                height="65"
+                rx="8"
+                fill="white"
+                stroke="#2563EB"
+                strokeWidth="2"
+                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"
+              />
+              <text x="200" y="40" textAnchor="middle" fill="#1E3A8A" fontSize="16" fontWeight="bold">
+                SKYARN
+              </text>
+              <text x="200" y="60" textAnchor="middle" fill="#6B7280" fontSize="12">
+                CYCLICAL
+              </text>
 
-              <h4 className="font-semibold text-sm md:text-base text-gray-900 leading-tight max-w-[10rem]">
-                {p.title}
-              </h4>
-            </motion.div>
-          ))}
+              {/* Arrow 1 */}
+              <line
+                x1="200"
+                y1="75"
+                x2="200"
+                y2="105"
+                stroke="#2563EB"
+                strokeWidth="2"
+                markerEnd="url(#arrow)"
+              />
+
+              {/* Box 2: Skytex */}
+              <rect
+                x="75"
+                y="105"
+                width="250"
+                height="65"
+                rx="8"
+                fill="white"
+                stroke="#2563EB"
+                strokeWidth="2"
+                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"
+              />
+              <text x="200" y="135" textAnchor="middle" fill="#1E3A8A" fontSize="16" fontWeight="bold">
+                Skytex
+              </text>
+              <text x="200" y="155" textAnchor="middle" fill="#6B7280" fontSize="11">
+                Manufacturer: S.A. 
+              </text>
+
+              {/* Arrow 2 */}
+              <line
+                x1="200"
+                y1="170"
+                x2="200"
+                y2="200"
+                stroke="#2563EB"
+                strokeWidth="2"
+                markerEnd="url(#arrow)"
+              />
+
+              {/* Box 3: Sabrina */}
+              <rect
+                x="125"
+                y="200"
+                width="150"
+                height="55"
+                rx="8"
+                fill="white"
+                stroke="#2563EB"
+                strokeWidth="2"
+                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"
+              />
+              <text x="200" y="232" textAnchor="middle" fill="#1E3A8A" fontSize="16" fontWeight="bold">
+                Sabrina
+              </text>
+
+              {/* Arrow 3 */}
+              <line
+                x1="200"
+                y1="255"
+                x2="200"
+                y2="285"
+                stroke="#2563EB"
+                strokeWidth="2"
+                markerEnd="url(#arrow)"
+              />
+
+              {/* Box 4: Skyrina (only one) */}
+              <rect
+                x="100"
+                y="285"
+                width="200"
+                height="55"
+                rx="8"
+                fill="white"
+                stroke="#2563EB"
+                strokeWidth="2"
+                filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"
+              />
+              <text x="200" y="318" textAnchor="middle" fill="#1E3A8A" fontSize="16" fontWeight="bold">
+                Skyrina
+              </text>
+
+              {/* Arrowhead Definition */}
+              <defs>
+                <marker
+                  id="arrow"
+                  markerWidth="10"
+                  markerHeight="7"
+                  refX="10"
+                  refY="3.5"
+                  orient="auto"
+                >
+                  <polygon points="0 0, 10 3.5, 0 7" fill="#2563EB" />
+                </marker>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Vertical Integration Statement */}
+          <div className="text-center mt-6">
+            <h4 className="text-xl md:text-2xl font-bold text-blue-800 mb-4">
+              Take advantage of vertical integration
+            </h4>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Control your entire supply chain, ensuring quality from yarn extrusion to final product — and guaranteeing repeatability.
+            </p>
+          </div>
+
+          {/* Benefits List */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <div className="flex items-center gap-3">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-700">Guaranteed raw material availability</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-700">Shorter production lead times (from 45 days)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-700">Quality control at every production stage</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-700">Shared costs across group companies</span>
+            </div>
+            <div className="flex items-center gap-3 md:col-span-2 md:justify-center">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span className="text-gray-700">Reduced dependency on external suppliers</span>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </section>
   );
 }
-

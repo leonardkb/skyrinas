@@ -7,8 +7,8 @@ export default function Navbar() {
 
   const menu = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Service", path: "/services" },
+    { name: "Products", path: "/products" },
+    { name: "About Us", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -59,14 +59,28 @@ export default function Navbar() {
 
         {/* Parent brands */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="hidden md:flex gap-3 font-semibold"
-        >
-          <span className="text-blue-200">Skytex</span>
-          <span className="text-green-300">Sabrina</span>
-        </motion.div>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+  className="hidden md:flex gap-3 font-semibold"
+>
+  <a 
+    href="https://www.skytexmexico.com/en/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-blue-200 hover:text-blue-300 transition-colors"
+  >
+    Skytex
+  </a>
+  <a 
+    href="https://www.sabrina.com.tw/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-green-300 hover:text-green-400 transition-colors"
+  >
+    Sabrina
+  </a>
+</motion.div>
 
         {/* Mobile Toggle */}
         <motion.button

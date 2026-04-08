@@ -2,15 +2,24 @@ import { motion } from "framer-motion";
 
 export function DesignPrototyping() {
   const features = [
-    "Sampling & prototyping",
-    "Embroidery & logo applications",
-    "Specialty garment finishes",
+    {
+      title: "Sampling & prototyping",
+      description: "Fast turnaround, high-fidelity samples to validate designs.",
+    },
+    {
+      title: "Types of Products & Fabrics",
+      description: "Extensive selection of materials and product categories to match your vision.",
+    },
+    {
+      title: "Embellishments",
+      description: "Heat Transfer, Embroidery, Pad Print, Laser, Ultrasonic Bonding.",
+    },
   ];
 
   return (
     <section
       className="relative bg-gradient-to-br from-sky-200 
-      via-green-600 to-blue-800 py-28 pb-40 overflow-hidden text-white "
+      via-green-600 to-blue-800 py-28 pb-40 overflow-hidden text-white"
     >
       {/* decorative blobs */}
       <motion.div
@@ -92,12 +101,11 @@ export function DesignPrototyping() {
               </motion.div>
 
               <h3 className="text-lg font-semibold text-white/95">
-                {item}
+                {item.title}
               </h3>
 
               <p className="text-sky-100 mt-3 text-sm">
-                Fast turnaround, expert finishing and high-fidelity samples to
-                validate designs.
+                {item.description}
               </p>
             </motion.div>
           ))}

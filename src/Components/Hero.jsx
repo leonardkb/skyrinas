@@ -86,7 +86,7 @@ export default function Hero() {
             quality, and sustainability.
           </motion.p>
 
-          <motion.div className="mt-8 flex items-center gap-4" variants={line}>
+         {/*  <motion.div className="mt-8 flex items-center gap-4" variants={line}>
             <motion.button
               type="button"
               onClick={() => setOpenModal(true)}
@@ -108,7 +108,7 @@ export default function Hero() {
             >
               Factory Tour
             </motion.a>
-          </motion.div>
+          </motion.div>*/}
         </motion.div>
       </div>
 

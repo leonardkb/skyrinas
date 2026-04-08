@@ -73,7 +73,7 @@ export default function Contact() {
             <div className="mt-10 space-y-6">
               <InfoCard title="Location" value="Mexico" />
               <InfoCard title="Email" value="info@skyrina.com" />
-              <InfoCard title="Leadership" value="Salvador Cassab" />
+             
             </div>
           </motion.div>
 

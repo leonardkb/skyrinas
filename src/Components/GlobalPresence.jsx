@@ -52,7 +52,7 @@ export function GlobalPresence() {
   };
 
   return (
-    <section className="bg-blue-100 py-20 relative overflow-hidden ">
+    <section className="bg-blue-100 py-20 relative overflow-hidden">
       <motion.div
         className="relative z-10 max-w-6xl mx-auto px-6 text-center"
         variants={container}
@@ -60,97 +60,129 @@ export function GlobalPresence() {
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
       >
-        {/* Heading */}
-        <motion.h2
-          variants={fadeUp}
-          className="text-2xl md:text-3xl font-semibold text-blue-800 mb-4"
-        >
-          Our Global Presence
-        </motion.h2>
+        {/* Why Work With Skyrina Section - Above Map */}
+        <motion.div variants={fadeUp} className="mb-16">
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl font-bold text-blue-800 mb-12 text-center"
+          >
+            Why Work With Skyrina
+          </motion.h2>
 
-        <motion.p
-          variants={fadeUp}
-          className="text-gray-600 mb-8"
-        >
-          Choose the most strategic production location based on cost,
-          logistics, and delivery time.
-        </motion.p>
-
-        {/* Map */}
-        <motion.div
-          variants={mapAnim}
-          className="relative w-full max-w-4xl mx-auto h-[420px]"
-        >
-          <img
-            src={mapSrc}
-            alt="world map"
-            className="w-full h-full object-contain pointer-events-none select-none"
-            aria-hidden="true"
-          />
-
-          {/* Pins */}
-          {spots.map((s, i) => (
-            <motion.button
-              key={s.id}
-              variants={pinAnim}
-              transition={{ delay: i * 0.08 }}
-              onClick={() => setActive(s.id)}
-              style={{ left: s.left, top: s.top }}
-              className={`absolute transform -translate-x-1/2 -translate-y-1/2 
-              flex items-center justify-center z-30 rounded-full shadow-lg
-              ${active === s.id
-                ? "w-11 h-11 bg-green-700"
-                : "w-10 h-10 bg-blue-800"}
-              `}
-              aria-label={s.id}
-            >
-              {/* Pulse ring for active */}
-              {active === s.id && (
-                <motion.span
-                  className="absolute inset-0 rounded-full border-2 border-green-300"
-                  animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
-              )}
-
-              <span className="w-2 h-2 rounded-full bg-white relative z-10" />
-            </motion.button>
-          ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              "350+ skilled seamstresses led by Taiwan-based experts",
+              "Dedicated pre-production & sample development",
+              "300,000–400,000 units monthly capacity",
+              "Advanced deskilling & template machines",
+              "Full production traceability",
+              "Delivery to USA in less than 36 hours",
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                transition={{ delay: i * 0.08 }}
+                className="bg-white p-6 rounded-xl shadow-md border-2 border-blue-300 hover:-translate-y-1 transition"
+              >
+                <p className="text-gray-700 font-medium">{item}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Location buttons */}
-        <motion.div
-          variants={container}
-          className="mt-8 flex flex-wrap justify-center gap-3"
-        >
-          {spots.map((s) => (
-            <motion.button
-              key={s.id}
-              variants={fadeUp}
-              onClick={() => setActive(s.id)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-full transition text-sm md:text-base
+        {/* Our Global Presence Section */}
+        <div>
+          <motion.h2
+            variants={fadeUp}
+            className="text-2xl md:text-3xl font-semibold text-blue-800 mb-4"
+          >
+            Our Global Presence
+          </motion.h2>
+
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-600 mb-8"
+          >
+            Choose the most strategic production location based on cost,
+            logistics, and delivery time.
+          </motion.p>
+
+          {/* Map */}
+          <motion.div
+            variants={mapAnim}
+            className="relative w-full max-w-4xl mx-auto h-[420px]"
+          >
+            <img
+              src={mapSrc}
+              alt="world map"
+              className="w-full h-full object-contain pointer-events-none select-none"
+              aria-hidden="true"
+            />
+
+            {/* Pins */}
+            {spots.map((s, i) => (
+              <motion.button
+                key={s.id}
+                variants={pinAnim}
+                transition={{ delay: i * 0.08 }}
+                onClick={() => setActive(s.id)}
+                style={{ left: s.left, top: s.top }}
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 
+                flex items-center justify-center z-30 rounded-full shadow-lg
                 ${active === s.id
-                  ? "bg-blue-800 text-white"
-                  : "bg-white text-blue-800 border border-blue-200"}
-              `}
-            >
-              {s.id}
-            </motion.button>
-          ))}
-        </motion.div>
+                  ? "w-11 h-11 bg-green-700"
+                  : "w-10 h-10 bg-blue-800"}
+                `}
+                aria-label={s.id}
+              >
+                {/* Pulse ring for active */}
+                {active === s.id && (
+                  <motion.span
+                    className="absolute inset-0 rounded-full border-2 border-green-300"
+                    animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                )}
 
-        {/* Active text */}
-        <motion.p
-          variants={fadeUp}
-          className="text-gray-500 mt-4 text-sm"
-        >
-          Selected location:{" "}
-          <span className="font-semibold text-gray-700">
-            {active}
-          </span>
-        </motion.p>
+                <span className="w-2 h-2 rounded-full bg-white relative z-10" />
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Location buttons */}
+          <motion.div
+            variants={container}
+            className="mt-8 flex flex-wrap justify-center gap-3"
+          >
+            {spots.map((s) => (
+              <motion.button
+                key={s.id}
+                variants={fadeUp}
+                onClick={() => setActive(s.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 rounded-full transition text-sm md:text-base
+                  ${active === s.id
+                    ? "bg-blue-800 text-white"
+                    : "bg-white text-blue-800 border border-blue-200"}
+                `}
+              >
+                {s.id}
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Active text */}
+          <motion.p
+            variants={fadeUp}
+            className="text-gray-500 mt-4 text-sm"
+          >
+            Selected location:{" "}
+            <span className="font-semibold text-gray-700">
+              {active}
+            </span>
+          </motion.p>
+        </div>
       </motion.div>
 
       {/* Bottom wave */}
