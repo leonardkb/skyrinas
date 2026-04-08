@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} /> {/* changed from /home */}
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} /> {/* added wildcard route */}
-        <Route path="*" element={<Contact />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
